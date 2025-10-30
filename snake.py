@@ -62,6 +62,11 @@ def move():
     update()
     ontimer(move, 200)
 
+def move_food():
+    food.x = randrange(-15,15) * 10
+    food.y = randrange(-15,15) * 10
+    ontimer(move_food, 4000)
+
 
 setup(420, 420, 370, 0)
 hideturtle()
@@ -71,5 +76,6 @@ onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
+move_food()
 move()
 done()
